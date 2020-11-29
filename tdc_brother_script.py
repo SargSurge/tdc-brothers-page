@@ -1,4 +1,4 @@
-# TDC Website Brother HTML and CSS Creator
+# TDC Website Brother HTML and CSS Generator
 # Created by Sergio Perez 11/28/2020
 
 def format_image_link(link):
