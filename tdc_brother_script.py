@@ -15,7 +15,7 @@ def first_last(name):
         first, last = first.lower(), last.lower()
         return first, last
     except:
-        raise Exception("Brother's name was not formatted correctly. Input should be as follows: John Doe\n If there is an exception, i.e. multiple last names, please fix in post.")
+        raise Exception("Brother's name was not formatted correctly.\n Input should be as follows: John Doe\n If there is an exception, i.e. multiple last names, please fix in post.")
 
 def generate_css(name,link):
     first, last = first_last(name)
@@ -39,39 +39,42 @@ def generate_html(name,major,hometown,bio):
             </div>'''
     return html
 
-# User Input
 
-name = input('Input Brother Name: ')
-major = input('Input Brother Major: ')
-hometown = input('Input Brother Hometown: ')
+if __name__ == '__main__':
+    
+    # User Input
 
-print("Enter/Paste the brother's bio. Ctrl-D or Ctrl-Z ( windows ) to save it.")
-contents = []
-while True:
-    try:
-        line = input()
-    except EOFError:
-        break
-    contents.append(line)
-bio = '\n'.join(contents)
+    name = input('Input Brother Name: ')
+    major = input('Input Brother Major: ')
+    hometown = input('Input Brother Hometown: ')
 
-link = input('Input Google Drive Image Link: ')
+    print("Enter/Paste the brother's bio. Ctrl-D or Ctrl-Z ( windows ) to save it.")
+    contents = []
+    while True:
+        try:
+            line = input()
+        except EOFError:
+            break
+        contents.append(line)
+    bio = '\n'.join(contents)
 
-# Generate Output
+    link = input('Input Google Drive Image Link: ')
 
-css = generate_css(name,link)
-html = generate_html(name,major,hometown,bio)
+    # Generate Output
 
-# Print Output
+    css = generate_css(name,link)
+    html = generate_html(name,major,hometown,bio)
 
-print('------------OUTPUT------------\n')
-print('CSS:\n')
-print(css)
-print('\n')
-print('HTML:\n')
-print(html)
-print('\n')
-print('------------END------------\n')
+    # Print Output
+
+    print('------------OUTPUT------------\n')
+    print('CSS:\n')
+    print(css)
+    print('\n')
+    print('HTML:\n')
+    print(html)
+    print('\n')
+    print('------------END------------\n')
           
 
 
